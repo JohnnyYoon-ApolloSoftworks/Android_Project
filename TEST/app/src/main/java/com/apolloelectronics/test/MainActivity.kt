@@ -1,21 +1,33 @@
 package com.apolloelectronics.test
 
-import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.apolloelectronics.test.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val tag : String = "MainActivity"
 
-    @SuppressLint("SetTextI18n")
+    private var toggleState : Boolean = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.btnSay.setOnClickListener {
-            binding.textView.text = "Hello Kotlin!"
+        Log.d(tag, "onCreate")
+
+        binding.btnPrint.setOnClickListener {
+            toggleState = !toggleState
+
+            if (toggleState) {
+                binding.textView.text = getString(R.string.helloWorld)
+            } else {
+                binding.textView.text = getString(R.string.helloKotlin)
+            }
+
+            Log.d(tag, "Button is Clicked!")
         }
     }
 }
