@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">TEST</string>
-    <string name="button">Button</string>
-    <string name="helloWorld">Hello World!</string>
-    <string name="helloKotlin">Hello Kotlin!</string>
-</resources>
